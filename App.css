@@ -1,0 +1,529 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f2f5;
+  color: #333;
+}
+
+.navbar {
+  background-color: #007bff;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar h1 {
+  margin: 0;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 64px); /* Adjust height based on the navbar */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #343a40;
+  color: white;
+  padding: 1rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 1rem 0;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+  color: #495057;
+}
+
+.sidebar ul li a.active {
+  color: #007bff;
+}
+
+.page-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin: 1rem;
+}
+
+.page-content h2 {
+  margin-bottom: 1rem;
+}
+
+.page-content p {
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #0056b3;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* ul li {
+  background-color: #f8f9fa;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+ul li button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+ul li button:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    order: 1;
+  }
+}
+//* src/components/Dashboard.css */
+.dashboard {
+  padding: 2rem;
+  margin-left: 250px; /* Adjust based on the width of the sidebar */
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+}
+
+.dashboard h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #343a40;
+  text-align: center;
+}
+
+.dashboard-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center; /* Center the stat items horizontally */
+  max-width: 1200px; /* Restrict maximum width to fit within the page */
+  width: 100%; /* Make it responsive */
+}
+
+.stat-item {
+  flex: 1;
+  max-width: 300px; /* Limit max-width for better responsiveness */
+  padding: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Center text inside the stat item */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.stat-item h2 {
+  margin-top: 0;
+  color: #495057;
+  font-size: 1.25rem;
+}
+
+.stat-item p {
+  font-size: 2rem;
+  margin: 0;
+  color: #212529;
+  font-weight: 600;
+}
+
+.recent-activities {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-top: 2rem;
+  max-width: 1200px; /* Restrict maximum width to fit within the page */
+  width: 100%; /* Make it responsive */
+}
+
+.recent-activities h2 {
+  margin-top: 0;
+  color: #343a40;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.recent-activities ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.recent-activities li {
+  padding: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  color: #495057;
+  font-size: 1rem;
+}
+
+.recent-activities li:last-child {
+  border-bottom: none;
+}
+
+.recent-activities li:hover {
+  background-color: #f1f3f5;
+}
+
+
+/* src/components/UserManagement.css */
+.user-management {
+  padding: 1rem;
+}
+
+.user-form {
+  margin-bottom: 1rem;
+}
+
+.user-form input {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.user-form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.user-form button:hover {
+  background-color: #0056b3;
+}
+
+.user-management ul {
+  list-style: none;
+  padding: 0;
+}
+
+.user-management li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.user-management button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.user-management button:hover {
+  background-color: #c82333;
+}
+
+.user-management button:last-child {
+  margin-left: 0.5rem;
+}
+
+/* src/components/ContentManagement.css */
+.content-management {
+  padding: 1rem;
+}
+
+.content-form {
+  margin-bottom: 1rem;
+}
+
+.content-form input,
+.content-form select {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.content-form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.content-form button:hover {
+  background-color: #0056b3;
+}
+
+.content-management ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content-management li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.content-management button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.content-management button:hover {
+  background-color: #c82333;
+}
+
+/* src/components/RealTimeScores.css */
+.real-time-scores {
+  padding: 1rem;
+}
+
+.real-time-scores ul {
+  list-style: none;
+  padding: 0;
+}
+
+.real-time-scores li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+/* src/components/EventManagement.css */
+.event-management {
+  padding: 1rem;
+}
+
+.event-form {
+  margin-bottom: 1rem;
+}
+
+.event-form input {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.event-form button {
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.event-form button:hover {
+  background-color: #0056b3;
+}
+
+.event-management ul {
+  list-style: none;
+  padding: 0;
+}
+
+.event-management li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.event-management button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+}
+
+.event-management button:hover {
+  background-color: #c82333;
+}
+
+
+/* Add to src/App.css */
+.system-settings {
+  padding: 2rem;
+}
+
+.system-settings .settings-item {
+  margin-bottom: 1rem;
+}
+
+.system-settings label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.system-settings select {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.system-settings input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+/* src/App.css */
+
+/* Sidebar Styles */
+.sidebar {
+  width: 250px;
+  background-color: #333;
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.sidebar-menu {
+  flex: 1;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar-item:hover {
+  background-color: #444;
+}
+
+.sidebar-item svg {
+  margin-right: 0.5rem;
+}
+
+.theme-toggle {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+/* src/App.css */
+
+/* Default light theme */
+body.light {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Additional styles for components to match themes */
+.user-management,
+.content-management,
+.real-time-scores,
+.event-management,
+.system-settings {
+  background-color: inherit; /* Inherit from body */
+  color: inherit; /* Inherit from body */
+}
+
+/* Optional: Define button styles that adapt to the theme */
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+body.dark button {
+  background-color: #0056b3;
+}
+
+body.dark button:hover {
+  background-color: #003d7a;
+}
